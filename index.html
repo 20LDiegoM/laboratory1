@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Laboratorio#1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--   <link rel="stylesheet" href="css/bootstrap.css">
+   -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- <script type="text/javascript" src="js/util/jquery.js"></script> -->
+    <!-- <script type="text/javascript" src="js/form.js"></script> -->
+    <!-- <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:400,600' rel='stylesheet' type='text/css' /> -->
+  </head>
+
+  <body>
+    <header>
+    <div class="navegation"></div>
+    <img class="logo" src="images/logo.png">
+      <nav role='navigation' class="menu">
+        <ul class="nav nav-pills">
+          <li role="presentation"><a href="#cuerpos">Cuerpos Celestes</a></li>
+          <li role="presentation"><a href="#">Programas Espaciales</a></li>
+          <li role="presentation"><a href="#">Misiones</a></li>
+        </ul>
+      </nav>
+    <div class="title">
+      <h1>Una aventura por el cosmos</h1>
+    </div>
+  </header>
+
+    <main class='main-elements'>
+      <h1 id = 'cuerpos'>Registrar un cuerpo celeste</h1>
+      <div class='btn-listas'>
+        <button class="btn btn-default btn-tipo" id='btn-estrella' type="button">Estrella</button>
+        <button class="btn btn-default btn-tipo" id='btn-PLaneta' type="button">Planeta</button>
+        <button class="btn btn-default btn-tipo" id='btn-satelite' type="button">Sat&eacute;lite</button>
+      </div>
+      
+      <section class="form-estrella" id="form-estrella">
+        <div class="row">
+          <form>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form-estrella" class="label-text">Nombre de la estrella</label>
+                <input type="text" class="form-control" id="inp-estrella-nombre">
+              </div>
+              <div class="form-group">
+                <label for="form-estrella" class="label-text">Temperatura Media</label>
+                <input type="text" class="form-control" id="inp-estrella-temp">
+              </div>
+              <div class="form-group">
+                <label for="form-estrella" class="label-text">Edad</label>
+                <input type="text" class="form-control"  id="inp-estrella-edad" >
+              </div>
+              <div class="form-group">
+                <label for="form-estrella" class="label-text">Intensidad Lum&iacute;nica</label>
+                <input type="text" class="form-control"
+                id="inp-estrella-luminosidad">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form-estrella" class="label-text">Masa</label>
+                <input type="text" class="form-control" id="inp-estrella-masa">
+              </div>
+              <div class="form-group">
+                <label for="form-estrella" class="label-text">Duraci&oacute;n de un D&iacute;a</label>
+                <input type="text" class="form-control" id="inp-estrella-duracion">
+              </div>
+              <div class="form-group">
+                <label for="form-estrella" class="label-text">Composici&oacute;n</label>
+                <input type="text" class="form-control" id="inp-estrella-comp">
+              </div>
+              <div class="form-group">
+                <label for="form-estrella" class="label-text">Tama&ntilde;o</label>
+                <input type="text" class="form-control" id="inp-estrella-tam">
+              </div>
+              <input class="btn btn-default pull-right btn-registrar" type="submit" value="Registrar" id="reg-estrella">
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="form-planeta" id="form-planeta">
+        <div class="row">
+          <form>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form-planeta" class="label-text">Nombre del planeta</label>
+                <input type="text" class="form-control"
+                id="inp-planeta-nombre">
+              </div>
+              <div class="form-group">
+                <label for="form-planeta" class="label-text">Temperatura Media</label>
+                <input type="text" class="form-control"
+                id="inp-planeta-temp">
+              </div>
+              <div class="form-group">
+                <label for="form-planeta" class="label-text">Distancia Media del Sol</label>
+                <input type="text" class="form-control" id="inp-planeta-distancia">
+              </div>
+              <!-- <div class="form-group">
+                <label for="form-planeta" class="label-text">Satelites en su Orbita</label>
+                <input type="text" class="form-control" id="inp-planeta-sat">
+              </div> -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form-planeta" class="label-text">Masa</label>
+                <input type="text" class="form-control" id="inp-planeta-masa">
+              </div>
+              <div class="form-group">
+                <label for="form-planeta" class="label-text">Duraci&oacute;n de un D&iacute;a</label>
+                <input type="text" class="form-control" id="inp-planeta-durDia" >
+              </div>
+              <div class="form-group">
+                <label for="form-planeta" class="label-text">Duraci&oacute;n de un A&ntilde;o</label>
+                <input type="text" class="form-control" id="inp-planeta-durAnno">
+              </div>
+              <input class="btn btn-default pull-right btn-registrar btn-margin" type="submit" value="Registrar" id="reg-PLaneta">
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="form-satelite" id="form-satelite">
+        <div class="row">
+          <form>
+            <div class="col-md-6">
+              <div class="form-group">
+              <label for="form-satelite" class="label-text">Nombre del sat&eacute;lite</label>
+                <input type="text" class="form-control" id="inp-sate-nombre">
+              </div>
+              <div class="form-group">
+                <label for="form-satelite" class="label-text">Temperatura Media</label>
+                <input type="text" class="form-control" id="inp-sate-temp" >
+              </div>
+              <div class="form-group">
+                <label for="form-satelite" class="label-text">Distancia Existente entre....</label>
+                <input type="text" class="form-control" id="inp-sate-dist" >
+              </div>
+              <div class="form-group">
+                <label for="form-satelite" class="label-text">Planeta al que pertenece</label>
+                <input type='text' class="form-control" list='listid'>
+                 <datalist id='listid'>
+                   <option label='J&uacute;piter' value='J&uacute;piter'>
+                   <option label='Marte' value='Marte'>
+                </datalist> 
+              </div>
+            </div>
+            <div class="col-md-6">
+               <div class="form-group">
+                <label for="form-satelite" class="label-text">Masa</label>
+                <input type="text" class="form-control" id="inp-sate-masa">
+              </div>
+              <div class="form-group">
+                <label for="form-satelite" class="label-text">Duraci&oacute;n de un D&iacute;a</label>
+                <input type="text" class="form-control" id="inp-sate-duracion">
+              </div>
+              <div class="form-group">
+                <label for="form-satelite" class="label-text">Caracter&iacute;sticas Principales</label>
+                <textarea class="form-control textarea" id="inp-sate-caract"></textarea>
+              </div>
+              <input class="btn btn-default pull-right btn-registrar btn-margin" type="submit" value="Registrar" id="reg-satelite">
+            </div>
+          </form>
+        </div>
+      </section>
+      
+      <h1>Registrar un programa espacial</h1>
+      <section class="form-programa" id="form-programa">
+        <div class="row">
+          <form>
+            <div class="col-md-6">
+              <div class="form-group">
+                
+                <label for="form-programa" class="label-text">Nombre del Programa</label>
+                <input type="text" class="form-control" id="inp-prog-nombre">
+              </div>
+              <div class="form-group">
+                <label for="form-programa" class="label-text">Fecha de Inicio</label>
+                <input type="text" class="form-control" id="inp-prog-fecha">
+              </div>
+              <div class="form-group">
+                <label for="form-programa" class="label-text">Alcance</label>
+                <input type="text" class="form-control" id="inp-prog-alcance">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form-programa" class="label-text">Misiones</label>
+                <input type="text" class="form-control" id="inp-prog-mision">
+              </div>
+              <div class="form-group">
+                <label for="form-programa" class="label-text">Fecha de Finalizaci&oacute;n</label>
+                <input type="text" class="form-control" id="inp-prog-feFinal" >
+              </div> 
+              <input class="btn btn-default pull-right btn-registrar btn-margin" type="submit" value="Registrar">
+            </div>
+          </form>
+        </div>
+      </section>
+      <h1>Registrar una misi&oacute;n espacial</h1>
+      <section class="form-misiones" id="form-misiones">
+        <div class="row">
+          <form>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form-misiones" class="label-text">Nombre de Misi&oacute;n</label>
+                <input type="text" class="form-control" id="inp-misi-nombre" >
+              </div>
+              <div class="form-group">
+                <label for="form-misiones" class="label-text">Fecha de Lanzamiento</label>
+                <input type="text" class="form-control" id="inp-misi-fecha" >
+              </div>
+              <div class="form-group">
+                <label for="form-misiones" class="label-text">Insignia</label>
+                <input type="text" class="form-control" id="inp-misi-insignia" placeholder="ruta de la imágen">
+              </div>
+              <div class="form-group">
+                <label for="form-misiones" class="label-text" >Cuerpo Celeste Destino</label>
+                <input type="text" class="form-control" id="inp-misi-cuerpo">
+              </div>
+              <div class="form-group">
+                <label for="form-misiones" class="label-text">Datos de Inter&eacute;s</label>
+                <textarea class="form-control" id="inp-misi-datos"></textarea>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form-misiones" class="label-text">Tripulantes</label>
+                <textarea type="text" class="form-control" id="inp-misi-tripu" placeholder="ej: Juan, María, etc."></textarea>
+              </div>
+              <div class="form-group">
+                <label for="form-misiones" class="label-text">Duraci&oacute;n Tiempo</label>
+                <input type="text" class="form-control" id="inp-misi-duracion">
+              </div>
+              <div class="form-group">
+                <label for="form-misiones" class="label-text">Resultado</label>
+                <input type="text" class="form-control" id="inp-misi-resultado>"
+              </div>
+              <div class="form-group">
+                <label for="form-misiones" class="label-text">Nave</label>
+                <input type="text" class="form-control" id="inp-misi-nave">
+              </div>
+              <input class="btn btn-default pull-right btn-registrar btn-margin " type="submit" value="Registrar">
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="consultas">
+        <h1>Seleccione  una lista para m&aacute;s informaci&oacute;n</h1>
+        <div class='btn-listas'>
+          <button class="btn btn-default btn-tipo" id='btn-listasEtrellas' type="button">Estrella</button>
+          <button class="btn btn-default btn-tipo" id='btn-listasPLaneta' type="button">Planeta</button>
+          <button class="btn btn-default btn-tipo" id='btn-listasSatelite'type="button">Sat&eacute;lite</button>
+        </div>
+
+        <table class="table table-striped tabla-estrellas">
+          <thead>
+            <tr>
+              ESTRELLAS
+              <th>Nombre</th>
+              <th>Masa</th>
+              <th>Tama&ntilde;o</th>
+              <th>Edad</th>
+              <th>Composici&oacute;n</th>
+              <th>Temp. Media</th>
+              <th>Duracion D&iacute;a</th>
+              <th>Int. Luminica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+            </tr>
+            <tr>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+            </tr>
+            <tr>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table table-striped tabla-planetas">
+          PLANETAS
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Masa</th>
+              <th>Temp. Media</th>
+              <th>Duración Dia</th>
+              <th>Duración A&ntilde;o</th>
+              <th>Dist. Sol</th>
+              <th>Cant. Sat&eacute;lites</th>
+              <th>Sat&eacute;lites Orbita</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+            </tr>
+            <tr>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+            </tr>
+            <tr>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <table class="table table-striped tabla-satelites">
+          SAT&Eacute;LITES
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Masa</th>
+              <th>Duracion</th>
+              <th>Temp. Media</th>
+              <th>Dist. Media</th>
+              <th>Planeta Pertenece</th>
+              <th>Carac. Principales</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+            </tr>
+            <tr>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>  
+            </tr>
+            <tr>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+            </tr>
+          </tbody>
+        </table>
+        <h1>Seleccione si desea informaci&oacute;n de cada una </h1>
+        <div class='btn-listas btn-lista2'>
+          <button class="btn btn-default btn-tipo btn-tipo2" id='btn-listaMisiones' type="button">Misiones</button>
+          <button class="btn btn-default btn-tipo btn-tipo2" id='btn-listaProgramas' type="button">Programas Espaciales</button>
+        </div>
+        <table class="table table-striped tabla-consultas" id = 'tbl-misiones'>
+  
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Tripulantes</th>
+              <th>Lanzamiento</th>
+              <th>Durari&oacute;n</th>
+              <th>Resultado</th>
+              <th>Insignia</th>
+              <th>Nave</th>
+              <th>Datos de Interes</th>
+              <th>Cuerpo celeste</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+            </tr>
+            <tr>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+            </tr>
+            <tr>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table table-striped tabla-consultas" id = 'tbl-programas'>
+          
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>F. de Inicio</th>
+              <th>F. de Finalizaci&oacute;n</th>
+              <th>Alcanse</th>
+              <th>Misiones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+              <td>eje</td>
+            </tr>
+            <tr>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+              <td>eje2</td>
+            </tr>
+            <tr>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+              <td>eje3</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class='btn-listas btn-lista3'>
+          <button class="btn btn-default btn-tipo btn-tipo2" id='btn-programasMisiones' type="button">Programas por misi&oacute;n</button>
+          <button class="btn btn-default btn-tipo btn-tipo2" id='btn-misionesCeleste' type="button">Misiones por cuerpo celeste</button>
+        </div>
+        <!--aqui agrege la lista -->
+        <table class="table table-striped tabla-programasXmision">
+          <thead>
+            <tr>
+              <!--programasXmision nombre de las misiones poner aqui el boton para ver los programa -->
+              <th>Nombre</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+        <!--aqui agrege la lista -->
+        <table class="table table-striped tabla-misionXceleste">
+          <thead>
+            <tr>
+              <!--programasXmision nombre de las misiones poner aqui el boton para ver los programa -->
+              <th>Misi&oacute;n</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        
+      </section>
+    </main>
+    <footer>
+      <img class="logo-footer" src="images/logo.png" width="165" height="96">
+    </footer>
+    <script type="text/javascript" src='js/jquery-2.2.0.min.js'></script>
+    <script type="text/javascript" src='js/clasesUniverso.js'></script>
+    <script type="text/javascript" src='js/inserts.js'></script>
+  </body>
+</html>
