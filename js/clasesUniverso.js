@@ -101,14 +101,16 @@ Satelite.prototype.constructor = Satelite;
 Planeta.prototype = new CuerpoCeleste();
 Planeta.prototype.constructor = Planeta;
 //=======================================================================
-var Mision = function (_nomb, _trip, _fLan, _dura, _dInt, _insi) {
+var Mision = function (_nomb, _trip, _fLan, _dura, _dInt, _insi, _resu, _nave) {
   var nombre = _nomb,
       tripulantes = _trip,
       fechaLan = _fLan,//fecha de lanzamiento
       duracion = _dura,
       datosInte = _dInt,//datos de interés
       insignia = _insi,//guarda la ruta de cada imagen
-      arrCuerposCel = []//arreglo de cuerpos celestes destino
+      result = _resu,
+      nave = _nave,
+      arrCuerposCel = [],//arreglo de cuerpos celestes destino
       estado = false;//atributo "bandera" para validar si la misión ya fue asignada a 1 p. espacial
 
   this.getNombre = function () {
@@ -128,6 +130,12 @@ var Mision = function (_nomb, _trip, _fLan, _dura, _dInt, _insi) {
   };
   this.getInsignia = function () {
     return insignia;
+  };
+  this.getResultado = function () {
+    return result;
+  };
+  this.getNave = function () {
+    return nave;
   };
   this.getCuerposCel = function () {
     return arrCuerposCel;

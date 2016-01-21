@@ -5,11 +5,10 @@
     <title>Laboratorio#1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <!--   <link rel="stylesheet" href="css/bootstrap.css">-->
+    <!--   <link rel="stylesheet" href="css/bootstrap.css">
+   -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <!-- <script type="text/javascript" src="js/util/jquery.js"></script> -->
-    <!-- <script type="text/javascript" src="js/form.js"></script> -->
     <!-- <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:400,600' rel='stylesheet' type='text/css' /> -->
   </head>
 
@@ -188,15 +187,15 @@
               </div>
             </div>
             <div class="col-md-6">
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="form-programa" class="label-text">Misiones</label>
                 <input type="text" class="form-control" id="inp-prog-mision">
-              </div>
+              </div> -->
               <div class="form-group">
                 <label for="form-programa" class="label-text">Fecha de Finalizaci&oacute;n</label>
                 <input type="text" class="form-control" id="inp-prog-feFinal" >
               </div> 
-              <input class="btn btn-default pull-right btn-registrar btn-margin" type="submit" value="Registrar">
+              <input class="btn btn-default pull-right btn-registrar btn-margin" type="submit" value="Registrar" id="reg-Programa">
             </div>
           </form>
         </div>
@@ -218,10 +217,10 @@
                 <label for="form-misiones" class="label-text">Insignia</label>
                 <input type="text" class="form-control" id="inp-misi-insignia" placeholder="ruta de la imágen">
               </div>
-              <div class="form-group">
+              <!--<div class="form-group">
                 <label for="form-misiones" class="label-text" >Cuerpo Celeste Destino</label>
                 <input type="text" class="form-control" id="inp-misi-cuerpo">
-              </div>
+              </div>-->
               <div class="form-group">
                 <label for="form-misiones" class="label-text">Datos de Inter&eacute;s</label>
                 <textarea class="form-control" id="inp-misi-datos"></textarea>
@@ -238,17 +237,48 @@
               </div>
               <div class="form-group">
                 <label for="form-misiones" class="label-text">Resultado</label>
-                <input type="text" class="form-control" id="inp-misi-resultado>"
+                <input type="text" class="form-control" id="inp-misi-resultado"
               </div>
               <div class="form-group">
                 <label for="form-misiones" class="label-text">Nave</label>
                 <input type="text" class="form-control" id="inp-misi-nave">
               </div>
-              <input class="btn btn-default pull-right btn-registrar btn-margin " type="submit" value="Registrar">
+              <input class="btn btn-default pull-right btn-registrar btn-margin " type="submit" value="Registrar" id="reg-Mision">
             </div>
           </form>
         </div>
       </section>
+
+      <section class="form-misiones" id="form-misiones">
+        <div class="row">
+          <form>
+            <h1>Asignar misión a un programa</h1>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form-misiones" class="label-text">Programa Espacial</label>
+                <select class="form-control" id="tal"></select>
+                  <datalist id='listid'>
+                    <option label='J&uacute;piter' value='J&uacute;piter'>
+                    <option label='Marte' value='Marte'>
+                  </datalist> 
+              </div>
+            </div>   
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form-misiones" class="label-text">Misión</label>
+                <select class="form-control" id="tal"></select>
+                 <datalist id='listid'>
+                   <option label='J&uacute;piter' value='J&uacute;piter'>
+                   <option label='Marte' value='Marte'>
+                </datalist> 
+              </div>
+              <input class="btn btn-default pull-right btn-registrar btn-margin" type="submit" value="Asignar Mision">
+            </div>  
+          </form>
+        </div>
+      </section>
+
+
 
       <section class="consultas">
         <h1>Seleccione  una lista para m&aacute;s informaci&oacute;n</h1>
@@ -522,6 +552,7 @@
     <footer>
       <img class="logo-footer" src="images/logo.png" width="165" height="96">
     </footer>
+    <!--<script type="text/javascript" src="js/form.js"></script>-->
     <script type="text/javascript" src='js/jquery-2.2.0.min.js'></script>
     <script type="text/javascript" src='js/clasesUniverso.js'></script>
     <script type="text/javascript" src='js/inserts.js'></script>

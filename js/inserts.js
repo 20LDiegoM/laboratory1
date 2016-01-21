@@ -13,10 +13,8 @@ var hideAllcc = function () {
 
 var cagarSelectPlanetas = function () {
 	var sPlanetas = $('#listid');//carga el select de planetas
-
 	//remueve todas las opciones precargadas
 	sPlanetas.empty();
-
 	//invoca funcion que actualiza el select
 	Planetas.forEach(function(_unPlaneta, i) {
 		var opt = $("<option></option>").attr("value", _unPlaneta.getNombre());
@@ -34,7 +32,6 @@ $(document).ready(function(){
 	$('#btn-estrella').on('click', function () {
 		hideAllcc();
 		$('#form-estrella').show('slow');
-
 	});
 	//listener del botón para abrir formulario de registro de planetas
 	$('#btn-PLaneta').on('click', function () {
@@ -139,17 +136,79 @@ $(document).ready(function(){
 			newSatelite = new Satelite(nomb, masa, temp, dura, dimeSC, caPrin, planeta);
 			Satelites.push(newSatelite);
 			console.log(">>Satélite creado");
+			console.log(Planetas.length);
 
 			//4) agregar satélite al planeta
-			for (i = 0; i < Planetas.length; i++){
-				if(Planetas[i]===planeta){
-					Planetas[i].agregarSatelite(newSatelite)
-					i=Planetas.length;//termina el ciclo
+			Planetas.forEach(function(_unPla, i) {
+				console.log("entroalforeach");
+		    	if(_unPla.getNombre() == planeta){
+					console.log("entró a el if");
+					_unPla.agregarSatelite(newSatelite);
 				}
+			});
+						//no está funcionando la inserción de satelite a planeta
+						/*for (i = 0; i >= Planetas.length; i++){
+							if(Planetas[i]===planeta){
+								console.log("En Planetas[] existe uno llamado"+ planeta );
+								Planetas[i].agregarSatelite(newSatelite);
+								i=Planetas.length;//termina el ciclo
+							}
+						}*/
+		}//fin3)
+	});
+	//listener del botón insertar p.espaciales
+	$('#reg-Programa').on('click', function () {
+		//1) capturar inputs
+		var nomb = $('#inp-prog-nombre').val(),
+			fIni = $('#inp-prog-fecha').val(),
+			fFin = $('#inp-prog-feFinal').val(),
+			alca = $('#inp-prog-alcance').val(),
+			existe=false;
+		//2) verificar si existe el p.espacial
+		PEspaciales.forEach(function(_unPrograma, i) {//recorre todo el arreglo de p.espaciales
+		    if(_unPrograma.getNombre()===nomb){//si encuentra un p.espacial con el mismo nombre (no disponible)
+				alert("Ya existe un programa espacial con el nombre: " + nomb);
+				existe = true;
+			} else {//p.espacial disponible
+				existe = false;
 			}
+		});
+		//3) insertar nueva p.espacial
+		if(!existe) {//crea el objeto únicamente si cumple con las validaciones
+			newPrograma = new ProgramaEspacial(nomb, fIni, fFin, alca);
+			PEspaciales.push(newPrograma);
+			console.log(">>Programa espacial creado");
 		}
+	});
 
-		
+	//listener del botón insertar p.espaciales
+	$('#reg-Mision').on('click', function () {
+		//1) capturar inputs
+		var nomb = $('#inp-misi-nombre').val(),
+			trip = $('#inp-misi-tripu').val(),
+			fLan = $('#inp-misi-fecha').val(),
+			dura = $('#inp-misi-duracion').val(),
+			dInt = $('#inp-misi-datos').val(),
+			insi = $('#inp-misi-insignia').val(),
+			resu = $('#inp-misi-resultado').val(),
+			nave = $('#inp-misi-nave').val(),
+			existe=false;
+			console.log("entró antes de del FEach");
+		//2) verificar si existe la misión 
+		Misiones.forEach(function(_unaMision, i) {//recorre todo el arreglo de misiones
+		    if(_unaMision.getNombre()===nomb){//si encuentra una misión con el mismo nombre (no disponible)
+				alert("Ya existe una misión con el nombre: " + nomb);
+				existe = true;
+			} else {//misión disponible
+				existe = false;
+			}
+		});
+		//3) insertar nueva misión
+		if(!existe) {//crea el objeto únicamente si cumple con las validaciones
+			newMision = new Mision(nomb, trip, fLan, dura, dInt, insi, resu, nave);
+			Misiones.push(newMision);
+			console.log(">>Misión creada");
+		}
 	});
 
 	console.log('>>inserts out');
