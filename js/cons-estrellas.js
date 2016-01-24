@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-//Validaciones Form Estrella
-
 var validateInputs = function () {
   var result = true,
     $inputNombre = $('#inp-estrella-nombre'),
@@ -13,47 +10,6 @@ var validateInputs = function () {
     $inputTamaño = $('#inp-estrella-tam'),
 
   $('.form-group').removeClass('has-error');
-=======
-var validateInputs = function() {
-  var result = true;
-  //Formularios
-
-  //Estrella
-  var $inputEstrellaNombre = $('#inp-estrella-nombre');
-  var $inputEstrellaTemp = $('#inp-estrella-temp');
-  var $inputEstrellaEdad = $('#inp-estrella-edad');
-  var $inputEstrellaLuminosidad = $('#inp-estrella-luminosidad');
-  var $inputEstrellaMasa = $('#inp-estrella-masa');
-  var $inputEstrellaDuracion = $('#inp-estrella-duracion');
-  var $inputEstrellaComp = $('#inp-estrella-comp');
-  var $inputEstrellaTam = $('#inp-estrella-tam');
-  ;
-
-
-
-  $('.form-group').removeClass('has-error');
-  
-  //Estrella
-  if (!$inputEstrellaNombre.val()) {
-    $inputEstrellaNombre.closest('.form-group').addClass('has-error');
-    result =false;
-  }
-
-  if (!$inputEstrellaTemp.val()) {
-    $inputEstrellaTemp.closest('.form-group').addClass('has-error');
-    result = false;
-  }
-
-  if (!$inputEstrellaEdad.val()) {
-    $inputEstrellaEdad.closest('.form-group').addClass('has-error');
-    result = false;
-  }
-
-  if (!$inputEstrellaLuminosidad.val()) {
-    $inputEstrellaLuminosidad.closest('.form-group').addClass('has-error');
-    result = false;
-  }
->>>>>>> c048ce6a97920d3901a18d219cfd67d2ec1bf876
 
   if (!/^[a-zA-Z]+$/.test($inputNombre.val())) {
     $inputNombre.closest('.form-group').addClass('has-error');
@@ -75,7 +31,6 @@ var validateInputs = function() {
     result = false;
   }
 
-<<<<<<< HEAD
   if (!/^[0-9]+$/.test($inputMasa.val())) {
     $inputMasa.closest('.form-group').addClass('has-error');
     result = false;
@@ -98,16 +53,43 @@ var validateInputs = function() {
 
   return result;
 };
-=======
-  return result;
-};
 
 
-
-
-$('document').ready(function() {
-  $('input').on('blur', function() { //para todos los inputs y textareas
+$('document').ready(function () {
+  $('input').on('blur', function () {
     validateInputs();
   });
+
+  $('#reg-estrella').on('click',function(){
+    var nuevaFila, valNombre, valTemperatura, valEdad, valIntensidad, valMasa, valDuracion, valComposicion, valTamaño;
+
+     if (validateInputs()) {
+      valNombre = $('#inp-estrella-nombre').val();
+      valMasa = $('#inp-estrella-masa').val();
+      valTamaño = $('#inp-estrella-tam').val();
+      valEdad = $('#inp-estrella-edad').val();
+      valComposicion = $('#inp-estrella-comp').val();
+      valTemperatura= $('#inp-estrella-temp').val();
+      valDuracion = $('#inp-estrella-duracion').val();
+      valIntensidad = $('#inp-estrella-luminosidad').val();
+    
+      nuevaFila = '<tr>';
+
+      nuevaFila += '<td>' + valNombre + '</td>';
+      nuevaFila += '<td>' + valTemperatura + '</td>';
+      nuevaFila += '<td>' + valEdad + '</td>';
+      nuevaFila += '<td>' + valIntensidad + '</td>';
+      nuevaFila += '<td>' + valDuracion + '</td>'; 
+      nuevaFila += '<td>' + valMasa + '</td>';
+      nuevaFila += '<td>' + valComposicion + '</td>';
+      nuevaFila += '<td>' + valTamaño + '</td>';    
+
+      nuevaFila += '</tr>';
+
+      $('#tabla-estrellas tbody').append(nuevaFila);
+
+    }
+  });
+
 });
->>>>>>> c048ce6a97920d3901a18d219cfd67d2ec1bf876
+>>>>>>> d11d78b9a452c21248df4d4057c9c2d1fb55f1f3
