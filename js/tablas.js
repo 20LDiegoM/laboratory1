@@ -38,14 +38,6 @@ $('document').ready(function () {
 
 });
 
-//tabla planetas 
-
-//Tabla de Satelites
-$('document').ready(function () {
-  $('input').on('blur', function () {
-    validateInputs();
-  });
-
   $('#reg-satelite').on('click',function(){
     var nuevaFila, valNombre, valTemperatura, valCaract, valMasa, valDuracion, valDistancia, valPlanetaPert;
 
