@@ -38,7 +38,45 @@ $('document').ready(function () {
 
 });
 
-//tabla panetas 
+//tabla planetas 
+
+//Tabla de Satelites
+$('document').ready(function () {
+  $('input').on('blur', function () {
+    validateInputs();
+  });
+
+  $('#reg-satelite').on('click',function(){
+    var nuevaFila, valNombre, valTemperatura, valCaract, valMasa, valDuracion, valDistancia, valPlanetaPert;
+
+     if (validateInputs()) {
+      valMasaSat = $('#inp-sate-masa').val();
+      valNombreSat = $('#inp-sate-nombre').val();
+      valDuracionSat = $('#inp-sate-duracion').val();
+      valTemperaturaSat= $('#inp-sate-temp').val();
+      valDistanciaSat = $('#inp-sate-dist').val();
+      valPlanetaPertSat = $('#inp-sate-pert').val();
+      valCaractSat = $('#inp-sate-caract').val();
+    
+      nuevaFila = '<tr>';
+
+      nuevaFila += '<td>' + valNombreSat + '</td>';
+      nuevaFila += '<td>' + valMasaSat + '</td>';
+      nuevaFila += '<td>' + valDuracionSat + '</td>'; 
+      nuevaFila += '<td>' + valTemperaturaSat + '</td>';
+      nuevaFila += '<td>' + valDistanciaSat + '</td>';
+      nuevaFila += '<td>' + valPlanetaPertSat + '</td>';
+      nuevaFila += '<td>' + valCaractSat + '</td>';    
+
+      nuevaFila += '</tr>';
+
+      $('#tabla-satelites tbody').append(nuevaFila);
+
+    }
+  });
+
+});
+
 
 
 
