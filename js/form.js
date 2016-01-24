@@ -63,7 +63,6 @@ var validateInputs = function () {
     $inputNombre = $('#inp-sate-nombre'),
     $inputTemperatura = $('#inp-sate-temp'),
     $inputDistancia = $('#inp-sate-dist');
-    $inputIntensidad = $('#inp-sate-luminosidad'),
     $inputMasa= $('#inp-sate-masa'),
     $inputDuracion = $('#inp-sate-duracion'),
     $inputComposicion = $('#inp-sate-comp'),
