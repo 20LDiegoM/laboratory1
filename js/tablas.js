@@ -81,6 +81,5 @@ $('document').ready(function () {
 
       $('#tabla-planetas tbody').append(nuevaFila);
     }
-  });//cierre tabla planetas
-  
+  });//cierre tabla planetas 
 });
