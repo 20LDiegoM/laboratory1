@@ -5,6 +5,9 @@ var hideAllcc = function () {
 	$('#form-estrella').hide();
 	$('#form-planeta').hide();
 	$('#form-satelite').hide();
+	$('#tabla-estrellas').hide();
+	$('#tabla-planetas').hide();
+	$('#tabla-satelites').hide();
 };
 //añade options a la lista desplegable de planetas
 var cagarSelectPlanetas = function () {
@@ -31,11 +34,25 @@ $(document).ready(function(){
 		console.log('entró al fomulario para registro de estrellas');
 	});
 
+	//listener: botón "abrir" tabla de estrellas
+	$('#btn-listasEtrellas').on('click', function () {
+		hideAllcc();
+		$('#tabla-estrellas').show('slow');
+		console.log('entró a la tabla de estrellas');
+	});
+
 	//listener: botón "abrir" form de registro de planetas
 	$('#btn-PLaneta').on('click', function () {
 		hideAllcc();
 		$('#form-planeta').show('slow');
 		console.log('entró al fomulario para registro de planetas');
+	});
+
+	//listener: botón "abrir" tabla de planetas
+	$('#btn-listasPLaneta').on('click', function () {
+		hideAllcc();
+		$('#tabla-planetas').show('slow');
+		console.log('mostro la tabla de  planetas');
 	});
 
 	//listener: botón "abrir" form de registro de satélites
@@ -53,6 +70,13 @@ $(document).ready(function(){
 			alert("No se pueden registrar satélites, debe registrar primero un planeta");
 		}
 	});
+
+	$('#btn-listasSatelite').on('click', function () {
+		hideAllcc();
+		$('#tabla-satelites').show('slow');
+		console.log('Mostro la tabla de Satelites');
+	});
+
 
 	//listener: botón insertar estrellas
 	$('#reg-estrella').on('click', function () {
