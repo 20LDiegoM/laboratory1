@@ -1,31 +1,23 @@
+//Validaciones Estrella
+
 var validateInputs = function () {
   var result = true,
-    $inputNombre = $('#inp-estrella-nombre'),
-    $inputTemperatura = $('#inp-estrella-temp'),
-    $inputEdad = $('#inp-estrella-edad'),
-    $inputIntensidad = $('#inp-estrella-luminosidad'),
-    $inputMasa= $('#inp-estrella-masa'),
-    $inputDuracion = $('#inp-estrella-duracion'),
-    $inputComposicion = $('#inp-estrella-comp'),
-    $inputTamaño = $('#inp-estrella-tam'),
-
     $inputNombreSat = $('#inp-sate-nombre'),
-    $inputMasaSat = $('#inp-sate-masa'),
+    $inputMasaSat = $('#inp-sate-masa');
     $inputDuracionSat = $('#inp-sate-duracion'),
     $inputTemperaturaSat = $('#inp-sate-temp'),
     $inputDistanciaSat = $('#inp-sate-dist'),
     $inputPlanetaPertSat= $('#inp-sate-pert'),
     $inputCaractSat = $('#inp-sate-caract'),
 
-
-    $inputNombrePla = $('#inp-planeta-nombre'),
-    $inputTemperaturaPla = $('#inp-planeta-temp'),
-    $inputDistanciaPla = $('#inp-planeta-distancia'),
-    $inputMasaPla= $('#inp-planeta-masa'),
-    $inputDuracionDiaPla = $('#inp-planeta-durDia'),
-    $inputCantidadSatelitesPla = $('#inp-planeta-CantSat'),
-    $inputDuracionAnnoPla = $('#inp-planeta-durAnno'),
-
+    $inputNombre = $('#inp-estrella-nombre'),
+    $inputTemperatura = $('#inp-estrella-temp'),
+    $inputEdad = $('#inp-estrella-edad');
+    $inputIntensidad = $('#inp-estrella-luminosidad'),
+    $inputMasa= $('#inp-estrella-masa'),
+    $inputDuracion = $('#inp-estrella-duracion'),
+    $inputComposicion = $('#inp-estrella-comp'),
+    $inputTamaño = $('#inp-estrella-tam'),
 
   $('.form-group').removeClass('has-error');
 
@@ -96,41 +88,6 @@ var validateInputs = function () {
 
   if (!/[A-Za-z0-9_]/.test($inputCaractSat.val())) {
     $inputCaractSat.closest('.form-group').addClass('has-error');
-    result = false;
-  }
-
-  if (!/^[a-zA-Z]+$/.test($inputNombrePla.val())) {
-    $inputNombrePla.closest('.form-group').addClass('has-error');
-    result = false;
-  }
-
-   if (!/^[0-9]+$/.test($inputTemperaturaPla.val())) {
-    $inputTemperaturaPla.closest('.form-group').addClass('has-error');
-    result = false;
-  }
-
-   if (!/^[0-9]+$/.test($inputDistanciaPla.val())) {
-    $inputDistanciaPla.closest('.form-group').addClass('has-error');
-    result = false;
-  }
-
-  if (!/^[0-9]+$/.test($inputMasaPla.val())) {
-    $inputMasaPla.closest('.form-group').addClass('has-error');
-    result = false;
-  }
-
-  if (!/^[0-9]+$/.test($inputDuracionDiaPla.val())) {
-    $inputDuracionDiaPla.closest('.form-group').addClass('has-error');
-    result = false;
-  }
-
-   if (!/^[0-9]+$/.test($inputCantidadSatelitesPla.val())) {
-    $inputCantidadSatelitesPla.closest('.form-group').addClass('has-error');
-    result = false;
-  }
-
-  if (!/^[0-9]+$/.test($inputDuracionAnnoPla.val())) {
-    $inputDuracionAnnoPla.closest('.form-group').addClass('has-error');
     result = false;
   }
 
