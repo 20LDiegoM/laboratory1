@@ -1,85 +1,55 @@
 $('document').ready(function () {
-  $('input').on('blur', function () {
-    validateInputs();
-  });
 
-  //Tabla de Estrellas
-  $('#reg-estrella').on('click',function(){
-    var nuevaFila, valNombre, valTemperatura, valEdad, valIntensidad, valMasa, valDuracion, valComposicion, valTamaño;
+  //listener: despliega información en la tabla de Estrellas
+  $('#btn-listasEtrellas').on('click',function(){
 
-    if (validateInputs()) {
-      valNombre = $('#inp-estrella-nombre').val();
-      valMasa = $('#inp-estrella-masa').val();
-      valTamaño = $('#inp-estrella-tam').val();
-      valEdad = $('#inp-estrella-edad').val();
-      valComposicion = $('#inp-estrella-comp').val();
-      valTemperatura= $('#inp-estrella-temp').val();
-      valDuracion = $('#inp-estrella-duracion').val();
-      valIntensidad = $('#inp-estrella-luminosidad').val();
-
+    //recorre cada una de las estrellas
+    Estrellas.forEach(function(_unaEstrella, i) {
+      //crea una nueva fila <tr> con toda la infomación (cada <td>) de la estrella actual (_unaEstrella[i])
       nuevaFila = '<tr>';
-      nuevaFila += '<td>' + valNombre + '</td>';
-      nuevaFila += '<td>' + valTemperatura + '</td>';
-      nuevaFila += '<td>' + valEdad + '</td>';
-      nuevaFila += '<td>' + valIntensidad + '</td>';
-      nuevaFila += '<td>' + valDuracion + '</td>'; 
-      nuevaFila += '<td>' + valMasa + '</td>';
-      nuevaFila += '<td>' + valComposicion + '</td>';
-      nuevaFila += '<td>' + valTamaño + '</td>';    
+      nuevaFila += '<td>' + _unaEstrella[i].getNombre() + '</td>';
+      nuevaFila += '<td>' + _unaEstrella[i].getMasa() + '</td>';
+      nuevaFila += '<td>' + _unaEstrella[i].getTamano() + '</td>';
+      nuevaFila += '<td>' + _unaEstrella[i].getEdad() + '</td>';
+      nuevaFila += '<td>' + _unaEstrella[i].getComposicion() + '</td>'; 
+      nuevaFila += '<td>' + _unaEstrella[i].getTemMedia() + '</td>';
+      nuevaFila += '<td>' + _unaEstrella[i].getDuracionDia() + '</td>';
+      nuevaFila += '<td>' + _unaEstrella[i].getIntLuminica() + '</td>';
       nuevaFila += '</tr>';
-
+      //agrega la fila nueva al cuerpo de la tabla
       $('#tabla-estrellas tbody').append(nuevaFila);
-    } 
+    });
+
   });//cierre tabla estrellas
 
   //Tabla de Satelites
-  $('#reg-satelite').on('click',function(){
-    var nuevaFila, valNombre, valTemperatura, valCaract, valMasa, valDuracion, valDistancia, valPlanetaPert;
+  $('#btn-listasSatelite').on('click',function(){
 
-    if (validateInputs()) {
-      valMasaSat = $('#inp-sate-masa').val();
-      valNombreSat = $('#inp-sate-nombre').val();
-      valDuracionSat = $('#inp-sate-duracion').val();
-      valTemperaturaSat= $('#inp-sate-temp').val();
-      valDistanciaSat = $('#inp-sate-dist').val();
-      valPlanetaPertSat = $('#inp-sate-pert').val();
-      valCaractSat = $('#inp-sate-caract').val();
+    nuevaFila = '<tr>';
+    nuevaFila += '<td>' + valNombreSat + '</td>';
+    nuevaFila += '<td>' + valMasaSat + '</td>';
+    nuevaFila += '<td>' + valDuracionSat + '</td>'; 
+    nuevaFila += '<td>' + valTemperaturaSat + '</td>';
+    nuevaFila += '<td>' + valDistanciaSat + '</td>';
+    nuevaFila += '<td>' + valPlanetaPertSat + '</td>';
+    nuevaFila += '<td>' + valCaractSat + '</td>';
+    nuevaFila += '</tr>';
 
-      nuevaFila = '<tr>';
-      nuevaFila += '<td>' + valNombreSat + '</td>';
-      nuevaFila += '<td>' + valMasaSat + '</td>';
-      nuevaFila += '<td>' + valDuracionSat + '</td>'; 
-      nuevaFila += '<td>' + valTemperaturaSat + '</td>';
-      nuevaFila += '<td>' + valDistanciaSat + '</td>';
-      nuevaFila += '<td>' + valPlanetaPertSat + '</td>';
-      nuevaFila += '<td>' + valCaractSat + '</td>';
-      nuevaFila += '</tr>';
-
-      $('#tabla-satelites tbody').append(nuevaFila);
-    }
+    $('#tabla-satelites tbody').append(nuevaFila);
   });//cierre tabla satélites
 
-  $('#reg-PLaneta').on('click',function(){
-    var nuevaFila, valNombre, valTemperatura, valDistancia, valMasa, valDuracion, valDuracionAnno, valTamaño;
+  $('btn-listasPLaneta').on('click',function(){
 
-    if (validateInputs()) {
-      valNombre = $('#inp-planeta-nombre').val();
-      valMasa = $('#inp-planeta-masa').val();
-      valTemperatura = $('#inp-planeta-temp').val();
-      valDuracion = $('#inp-planeta-durDia').val();
-      valDuracionAnno = $('#inp-planeta-durAnno').val();
-      valDistancia= $('#inp-planeta-distancia').val();
+    nuevaFila = '<tr>';
+    nuevaFila += '<td>' + valNombre + '</td>';
+    nuevaFila += '<td>' + valMasa + '</td>';
+    nuevaFila += '<td>' + valTemperatura + '</td>';
+    nuevaFila += '<td>' + valDuracion + '</td>';
+    nuevaFila += '<td>' + valDuracionAnno + '</td>'; 
+    nuevaFila += '<td>' + valDistancia + '</td>';
+    nuevaFila += '</tr>';
 
-      nuevaFila = '<tr>';
-      nuevaFila += '<td>' + valNombre + '</td>';
-      nuevaFila += '<td>' + valMasa + '</td>';
-      nuevaFila += '<td>' + valTemperatura + '</td>';
-      nuevaFila += '<td>' + valDuracion + '</td>';
-      nuevaFila += '<td>' + valDuracionAnno + '</td>'; 
-      nuevaFila += '<td>' + valDistancia + '</td>';
-      nuevaFila += '</tr>';
+    $('#tabla-planetas tbody').append(nuevaFila);
+  });//cierre tabla planetas
 
-      $('#tabla-planetas tbody').append(nuevaFila);
-    }
-  });//cierre tabla planetas 
-});
+});//fin ready
