@@ -78,6 +78,41 @@ $('document').ready(function () {
 });
 
 
+$('document').ready(function () {
+  $('input').on('blur', function () {
+    validateInputs();
+  });
+
+  $('#reg-PLaneta').on('click',function(){
+    var nuevaFila, valNombre, valTemperatura, valDistancia, valMasa, valDuracion, valDuracionAnno, valTamaño;
+
+     if (validateInputs()) {
+      valNombre = $('#inp-planeta-nombre').val();
+      valMasa = $('#inp-planeta-masa').val();
+      valTemperatura = $('#inp-planeta-temp').val();
+      valDuracion = $('#inp-planeta-durDia').val();
+      valDuracionAnno = $('#inp-planeta-durAnno').val();
+      valDistancia= $('#inp-planeta-distancia').val();
+      
+    
+      nuevaFila = '<tr>';
+
+      nuevaFila += '<td>' + valNombre + '</td>';
+      nuevaFila += '<td>' + valMasa + '</td>';
+      nuevaFila += '<td>' + valTemperatura + '</td>';
+      nuevaFila += '<td>' + valDuracion + '</td>';
+      nuevaFila += '<td>' + valDuracionAnno + '</td>'; 
+      nuevaFila += '<td>' + valDistancia + '</td>';
+    
+
+      nuevaFila += '</tr>';
+
+      $('#tabla-planetas tbody').append(nuevaFila);
+
+    }
+  });
+
+});
 
 
 
