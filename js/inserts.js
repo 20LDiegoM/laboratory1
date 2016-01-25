@@ -27,8 +27,8 @@ $(document).ready(function(){
 	hideAllcc();
 		$('#tbl-misiones').hide();		
 		$('#tbl-programas').hide();
-		$('#tbl-misiones').hide();		
-		$('#tbl-programas').hide();
+		$('#table-mision').hide();		
+		$('#table-mision-cuerpo').hide();
 	//--invocar función de validación de inputs--
 
 	//listener: botón "abrir" form de registro de estrellas
@@ -94,6 +94,19 @@ $(document).ready(function(){
 		$('#tbl-misiones').hide();		
 		$('#tbl-programas').show('slow');
 		console.log('mostro la tabla de  misiones');
+	});
+
+	//listener: botón "abrir misiones por programa" 
+	$('#btn-programasMisiones').on('click', function () {
+		$('#table-mision-cuerpo').hide();		
+		$('#table-mision').show('slow');
+		console.log('mostro la tabla de  misiones-programa');
+	});
+
+	$('#btn-misionesCeleste').on('click', function () {
+		$('#table-mision').hide();		
+		$('#table-mision-cuerpo').show('slow');
+		console.log('mostro la tabla de  misiones.cuerpo');
 	});
 
 
