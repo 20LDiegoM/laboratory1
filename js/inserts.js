@@ -78,6 +78,30 @@ $(document).ready(function(){
 	});
 
 
+	//listener: botón "abrir" tabla de misiones
+	$('#btn-listaMisiones').on('click', function () {
+	    $('#tbl-programas').hide;
+		$('#tbl-misiones').show('slow');
+		console.log('mostro la tabla de  misiones');
+	});
+
+	//listener: botón "abrir" tabla de programas
+	$('#btn-listaProgramas').on('click', function () {
+		$('#tbl-misiones').hide;		
+		$('#tbl-programas').show('slow');
+		console.log('mostro la tabla de  misiones');
+	});
+
+
+
+
+
+
+
+
+
+
+
 	//listener: botón insertar estrellas
 	$('#reg-estrella').on('click', function () {
 		//1) capturar inputs
