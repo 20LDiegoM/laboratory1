@@ -25,6 +25,10 @@ var cagarSelectPlanetas = function () {
 $(document).ready(function(){
 	console.log('>>inserts in!');
 	hideAllcc();
+		$('#tbl-misiones').hide();		
+		$('#tbl-programas').hide();
+		$('#tbl-misiones').hide();		
+		$('#tbl-programas').hide();
 	//--invocar función de validación de inputs--
 
 	//listener: botón "abrir" form de registro de estrellas
@@ -80,14 +84,14 @@ $(document).ready(function(){
 
 	//listener: botón "abrir" tabla de misiones
 	$('#btn-listaMisiones').on('click', function () {
-	    $('#tbl-programas').hide;
+	    $('#tbl-programas').hide();
 		$('#tbl-misiones').show('slow');
 		console.log('mostro la tabla de  misiones');
 	});
 
 	//listener: botón "abrir" tabla de programas
 	$('#btn-listaProgramas').on('click', function () {
-		$('#tbl-misiones').hide;		
+		$('#tbl-misiones').hide();		
 		$('#tbl-programas').show('slow');
 		console.log('mostro la tabla de  misiones');
 	});
