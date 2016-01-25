@@ -70,7 +70,7 @@ $(document).ready(function(){
 			alert("No se pueden registrar satélites, debe registrar primero un planeta");
 		}
 	});
-
+	//listener: botón "abrir" tabla de satélites
 	$('#btn-listasSatelite').on('click', function () {
 		hideAllcc();
 		$('#tabla-satelites').show('slow');
@@ -92,21 +92,24 @@ $(document).ready(function(){
 			existe = false;//bandera para validación
 		//2) verificar si existe la estrella
 
-		/*if(Estrellas.length!=0){//la primera vez no entra(ya que no hay objetos en el array)
-			for(i=0;1<Estrellas.length;i++){
-				if(Estrellas[i].getNombre()===nomb){//si encuentra una estrella con el mismo nombre
-					alert("Ya existe una estrella con el nombre: " + nomb);
-					existe = true;
-					break;//importante: detiene el ciclo
-				}
+		for(i=0;1<Estrellas.length;i++){
+			console.log("entró",i);
+			if(Estrellas[i].getNombre()===nomb){//si encuentra una estrella con el mismo nombre
+				alert("Ya existe una estrella con el nombre: " + nomb);
+				existe = true;
+				console.log("nombre ocupado");
+				break;//importante: detiene el ciclo
 			}
-		}*/
+		}
 		/*Estrellas.forEach(function(_unaEstrella, i) {//recorre todo el arreglo de estrellas
+			console.log("entró",i);
 		    if(_unaEstrella.getNombre()===nomb){//si encuentra una estrella con el mismo nombre (no disponible)
 				alert("Ya existe una estrella con el nombre: " + nomb);
 				existe = true;
+				console.log("nombre ocupado");
 			} else {//estrella disponible
 				existe = false;
+				console.log("nombre disponible");
 			}
 		});*/
 		//3) insertar nueva estrella
