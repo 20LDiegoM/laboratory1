@@ -22,34 +22,44 @@ $('document').ready(function () {
 
   });//cierre tabla estrellas
 
-  //Tabla de Satelites
-  $('#btn-listasSatelite').on('click',function(){
+    //Tabla de Satelites
+    $('#btn-listasSatelite').on('click',function(){
 
-    nuevaFila = '<tr>';
-    nuevaFila += '<td>' + valNombreSat + '</td>';
-    nuevaFila += '<td>' + valMasaSat + '</td>';
-    nuevaFila += '<td>' + valDuracionSat + '</td>'; 
-    nuevaFila += '<td>' + valTemperaturaSat + '</td>';
-    nuevaFila += '<td>' + valDistanciaSat + '</td>';
-    nuevaFila += '<td>' + valPlanetaPertSat + '</td>';
-    nuevaFila += '<td>' + valCaractSat + '</td>';
-    nuevaFila += '</tr>';
+      Satelites.forEach(function(_unSatelite, i) {
 
-    $('#tabla-satelites tbody').append(nuevaFila);
-  });//cierre tabla satélites
+        nuevaFila = '<tr>';
+        nuevaFila += '<td>' + getNombre() + '</td>';
+        nuevaFila += '<td>' + getMasa() + '</td>';
+        nuevaFila += '<td>' + getDuracionDia() + '</td>'; 
+        nuevaFila += '<td>' + getTemMedia() + '</td>';
+        nuevaFila += '<td>' + getDimeSC() + '</td>';
+        nuevaFila += '<td>' + getPlaneta() + '</td>';
+        nuevaFila += '<td>' + getCarPrincip() + '</td>';
+        nuevaFila += '</tr>';
 
-  $('btn-listasPLaneta').on('click',function(){
+        $('#tabla-satelites tbody').append(nuevaFila);
+      }); 
 
-    nuevaFila = '<tr>';
-    nuevaFila += '<td>' + valNombre + '</td>';
-    nuevaFila += '<td>' + valMasa + '</td>';
-    nuevaFila += '<td>' + valTemperatura + '</td>';
-    nuevaFila += '<td>' + valDuracion + '</td>';
-    nuevaFila += '<td>' + valDuracionAnno + '</td>'; 
-    nuevaFila += '<td>' + valDistancia + '</td>';
-    nuevaFila += '</tr>';
+    });//cierre tabla satélites
 
-    $('#tabla-planetas tbody').append(nuevaFila);
-  });//cierre tabla planetas
+    //Tabla Planetas
+    $('btn-listasPLaneta').on('click',function(){
+
+      Planetas.forEach(function(_unPlaneta, i) {
+
+          nuevaFila = '<tr>';
+          nuevaFila += '<td>' + getNombre() + '</td>';
+          nuevaFila += '<td>' + getMasa() + '</td>';
+          nuevaFila += '<td>' + getTemMedia() + '</td>';
+          nuevaFila += '<td>' + getDuracionDia() + '</td>';
+          nuevaFila += '<td>' + getDuracionAnno() + '</td>'; 
+          nuevaFila += '<td>' + getCantSate() + '</td>';
+          nuevaFila += '<td>' + getSatelites() + '</td>';
+          nuevaFila += '</tr>';
+
+          $('#tabla-planetas tbody').append(nuevaFila);
+      });    
+        
+    });//cierre tabla planetas
 
 });//fin ready
