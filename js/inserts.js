@@ -21,6 +21,54 @@ var cagarSelectPlanetas = function () {
 		console.log(">>opción agregada a select de planetas");
 	});
 };
+//añade options a la lista desplegable de PEspaciales
+var cagarSelectPEspaciales = function () {
+	var sPEspaciales = $('#???');//carga lista de PEspaciales
+	//remueve todas las opciones precargadas en la lista
+	sPEspaciales.empty();
+	//invoca función que actualiza la lista
+	PEspaciales.forEach(function(_unPEspa, i) {
+		var opt = $("<option></option>").attr("value", _unPEspa.getNombre());
+		sPEspaciales.append(opt);
+		console.log(">>opción agregada a select de PEspaciales");
+	});
+};
+//añade options a la lista desplegable de Misiones
+var cagarSelectMisiones = function () {
+	var sMisiones = $('#???');//carga lista de Misiones
+	//remueve todas las opciones precargadas en la lista
+	sMisiones.empty();
+	//invoca función que actualiza la lista
+	Misiones.forEach(function(_unaMision, i) {
+		var opt = $("<option></option>").attr("value", _unaMision.getNombre());
+		sMisiones.append(opt);
+		console.log(">>opción agregada a select de Misiones");
+	});
+};
+//añade options a la lista desplegable de Misiones2
+var cagarSelectMisiones2 = function () {
+	var sMisiones = $('#???');//carga lista de Misiones
+	//remueve todas las opciones precargadas en la lista
+	sMisiones.empty();
+	//invoca función que actualiza la lista
+	Misiones.forEach(function(_unaMision, i) {
+		var opt = $("<option></option>").attr("value", _unaMision.getNombre());
+		sMisiones.append(opt);
+		console.log(">>opción agregada a select de Misiones");
+	});
+};
+//añade options a la lista desplegable de CCelestes(esta es diferente!!!)
+var cagarSelectCCelestes = function () {
+	var sCCelestes = $('#???');//carga lista de CCelestes
+	//remueve todas las opciones precargadas en la lista
+	sCCelestes.empty();
+	//invoca función que actualiza la lista
+	Planetas.forEach(function(_unPlaneta, i) {
+		var opt = $("<option></option>").attr("value", _unPlaneta.getNombre());
+		sCCelestes.append(opt);
+		console.log(">>opción agregada a select de planetas");
+	});
+};
 //=======================================================================
 $(document).ready(function(){
 	console.log('>>inserts in!');
@@ -168,7 +216,10 @@ $(document).ready(function(){
 			dura = $('#inp-sate-duracion').val(),
 			dimeSC = $('#inp-sate-dist').val(),
 			caPrin = $('#inp-sate-caract').val(),
-			planeta = $('#inp-sate-planeta').val(),
+			planeta = $('#listid').val(),
+			//planeta = $('#listid option:selected').attr('value'),
+			//planeta = $('#listid option:selected').val(),
+			//planeta = $('#listid option:selected').text(),
 			existe = false;//bandera de verificación de satélites
 		//2) verificar si existe el satélite
 		//3) insertar nuevo satélite
