@@ -91,27 +91,6 @@ $(document).ready(function(){
 			tama = $('#inp-estrella-tam').val(),
 			existe = false;//bandera para validación
 		//2) verificar si existe la estrella
-
-		for(i=0;1<Estrellas.length;i++){
-			console.log("entró",i);
-			if(Estrellas[i].getNombre()===nomb){//si encuentra una estrella con el mismo nombre
-				alert("Ya existe una estrella con el nombre: " + nomb);
-				existe = true;
-				console.log("nombre ocupado");
-				break;//importante: detiene el ciclo
-			}
-		}
-		/*Estrellas.forEach(function(_unaEstrella, i) {//recorre todo el arreglo de estrellas
-			console.log("entró",i);
-		    if(_unaEstrella.getNombre()===nomb){//si encuentra una estrella con el mismo nombre (no disponible)
-				alert("Ya existe una estrella con el nombre: " + nomb);
-				existe = true;
-				console.log("nombre ocupado");
-			} else {//estrella disponible
-				existe = false;
-				console.log("nombre disponible");
-			}
-		});*/
 		//3) insertar nueva estrella
 		if(!existe) {//crea el objeto únicamente si cumple con las validaciones
 			newEstrella = new Estrella(nomb, masa, temp, dura, edad, comp, intLum, tama);
@@ -131,15 +110,6 @@ $(document).ready(function(){
 			duAnno = $('#inp-planeta-durAnno').val(),
 			existe = false;
 		//2) verificar si existe el planeta
-		/*if(Planetas.length>0){
-			for(i=0;1<=Planetas.length;i++){
-				if(Planetas[i].getNombre()===nomb){
-					alert("Ya existe una estrella con el nombre: " + nomb);
-					existe = true;
-					break;
-				}
-			}
-		}*/
 		//3) insertar nuevo planeta
 		if(!existe) {
 			newPlaneta = new Planeta(nomb, masa, temp, dura, diMeSo, duAnno);
@@ -160,15 +130,6 @@ $(document).ready(function(){
 			planeta = $('#inp-sate-planeta').val(),
 			existe = false;//bandera de verificación de satélites
 		//2) verificar si existe el satélite
-		/*Satelites.forEach(function(_unSatelite, i) {
-		    if(_unSatelite.getNombre()===nomb){
-				alert("Ya existe un satélite con el nombre: " + nomb);
-				existe = true;
-				i=Planetas.length;
-			} else {//satélite disponible
-				existe = false;
-			}
-		});*/
 		//3) insertar nuevo satélite
 		if(!existe) {
 			newSatelite = new Satelite(nomb, masa, temp, dura, dimeSC, caPrin, planeta);
@@ -204,14 +165,6 @@ $(document).ready(function(){
 			alca = $('#inp-prog-alcance').val(),
 			existe=false;
 		//2) verificar si existe el p.espacial
-		/*PEspaciales.forEach(function(_unPrograma, i) {//recorre todo el arreglo de p.espaciales
-		    if(_unPrograma.getNombre()===nomb){//si encuentra un p.espacial con el mismo nombre (no disponible)
-				alert("Ya existe un programa espacial con el nombre: " + nomb);
-				existe = true;
-			} else {//p.espacial disponible
-				existe = false;
-			}
-		});*/
 		//3) insertar nueva p.espacial
 		if(!existe) {//crea el objeto únicamente si cumple con las validaciones
 			newPrograma = new ProgramaEspacial(nomb, fIni, fFin, alca);
@@ -234,14 +187,6 @@ $(document).ready(function(){
 			existe=false;
 			console.log("entró antes de del FEach");
 		//2) verificar si existe la misión 
-		/*Misiones.forEach(function(_unaMision, i) {//recorre todo el arreglo de misiones
-		    if(_unaMision.getNombre()===nomb){//si encuentra una misión con el mismo nombre (no disponible)
-				alert("Ya existe una misión con el nombre: " + nomb);
-				existe = true;
-			} else {//misión disponible
-				existe = false;
-			}
-		});*/
 		//3) insertar nueva misión
 		if(!existe) {//crea el objeto únicamente si cumple con las validaciones
 			newMision = new Mision(nomb, trip, fLan, dura, dInt, insi, resu, nave);
