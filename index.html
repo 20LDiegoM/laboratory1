@@ -278,6 +278,35 @@
         </div>
       </section>
 
+  <section class="form-cuerpos" id="form-cuerpos">
+        <div class="row">
+          <form>
+            <h1>Asignar cuerpo celeste a mision</h1>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form-cuerpos" class="label-text">Mision</label>
+                <select class="form-control" id="tal"></select>
+                  <datalist id='listid'>
+                    <option label='J&uacute;piter' value='J&uacute;piter'>
+                    <option label='Marte' value='Marte'>
+                  </datalist> 
+              </div>
+            </div>   
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="form-misiones" class="label-text">Cuerpo Celeste</label>
+                <select class="form-control" id="tal"></select>
+                 <datalist id='listid'>
+                   <option label='J&uacute;piter' value='J&uacute;piter'>
+                   <option label='Marte' value='Marte'>
+                </datalist> 
+              </div>
+              <input class="btn btn-default pull-right btn-registrar btn-margin" type="button" value="Asignar
+              Cuerpo">
+            </div>  
+          </form>
+        </div>
+      </section>
 
 
       <section class="consultas">
@@ -400,24 +429,54 @@
           <button class="btn btn-default btn-tipo btn-tipo2" id='btn-programasMisiones' type="button">Programas por misi&oacute;n</button>
           <button class="btn btn-default btn-tipo btn-tipo2" id='btn-misionesCeleste' type="button">Misiones por cuerpo celeste</button>
         </div>
+        
+
+
+<form class="form-inline">
+  <div class="form-group">
+    <select class="form-control">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+</select>
+  
+  </div>
+  <button type="submit" class="btn btn-default pull-right" id="consulta-programa-mision">Registar</button>
+</form>
         <!--aqui agrege la lista -->
         <table class="table table-striped tabla-programasXmision">
           <thead>
             <tr>
               <!--programasXmision nombre de las misiones poner aqui el boton para ver los programa -->
               <th>Nombre</th>
+               
             </tr>
           </thead>
           <tbody>
           </tbody>
         </table>
-
+<form class="form-inline">
+  <div class="form-group">
+    <select class="form-control">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+</select>
+  
+  </div>
+  <button type="submit" class="btn btn-default pull-right" id="consulta-mision-cuerpo">Registar</button>
+</form>
         <!--aqui agrege la lista -->
         <table class="table table-striped tabla-misionXceleste">
           <thead>
             <tr>
               <!--programasXmision nombre de las misiones poner aqui el boton para ver los programa -->
               <th>Misi&oacute;n</th>
+            
             </tr>
           </thead>
           <tbody>
