@@ -9,6 +9,19 @@ var hideAllcc = function () {
 	$('#tabla-planetas').hide();
 	$('#tabla-satelites').hide();
 };
+
+/*var cagarSelectPlanetas = function () {
+	var sPlanetas = $('#listid');//carga lista de planetas
+	var tam = sPlanetas.options.length;
+	for (i = 0; i < tam; i++){
+		sPlanetas.remove(i);
+	}
+	//invoca funcion que actualiza el select de los cursos
+	Planetas.forEach(function(_unPlaneta, i) {
+		sPlanetas.options[i] = new Option(_unPlaneta.getNombre(), _unPlaneta.getNombre());//(value , contenido)
+		console.log(">>option agregada");
+	});
+};*/
 //añade options a la lista desplegable de planetas
 var cagarSelectPlanetas = function () {
 	var sPlanetas = $('#listid');//carga lista de planetas
@@ -216,7 +229,7 @@ $(document).ready(function(){
 			dura = $('#inp-sate-duracion').val(),
 			dimeSC = $('#inp-sate-dist').val(),
 			caPrin = $('#inp-sate-caract').val(),
-			planeta = $('#listid').val(),
+			planeta = $('#inp-sate-pert').val(),
 			//planeta = $('#listid option:selected').attr('value'),
 			//planeta = $('#listid option:selected').val(),
 			//planeta = $('#listid option:selected').text(),
