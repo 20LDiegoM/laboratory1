@@ -236,7 +236,6 @@ $(document).ready(function(){
 			newSatelite = new Satelite(nomb, masa, temp, dura, dimeSC, caPrin, planeta);
 			Satelites.push(newSatelite);
 			console.log(">>Satélite creado");
-			console.log(Planetas.length);
 
 			//4) agregar satélite al planeta
 			for (i = 0; i < Planetas.length; i++){
@@ -275,7 +274,6 @@ $(document).ready(function(){
 			resu = $('#inp-misi-resultado').val(),
 			nave = $('#inp-misi-nave').val(),
 			existe=false;
-			console.log("entró antes de del FEach");
 		//2) verificar si existe la misión 
 		//3) insertar nueva misión
 		if(!existe) {//crea el objeto únicamente si cumple con las validaciones
@@ -292,14 +290,16 @@ $(document).ready(function(){
 		//recorre los programas
 		for (i = 0; i < PEspaciales.length; i++){
 			if(PEspaciales[i].getNombre()===pespacial){
-				i=PEspaciales.length;//termina el ciclo
+				//console.log('encontró programa: '+PEspaciales[i].getNombre());
 				//recorre las misiones
 				for (j = 0; j < Misiones.length; j++){
 					if(Misiones[j].getNombre()===mision){
-						PEspaciales[i].agregarMisiones(Misiones[j]);
+						//console.log('encontró misión: '+Misiones[j].getNombre());
+						PEspaciales[i].agregarMision(Misiones[j]);
 						j=Misiones.length;//termina el ciclo
 					}
 				}
+				i=PEspaciales.length;//termina el ciclo
 			}
 		}
 	});

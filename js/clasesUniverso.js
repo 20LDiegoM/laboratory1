@@ -143,6 +143,7 @@ var Mision = function (_nomb, _trip, _fLan, _dura, _dInt, _insi, _resu, _nave) {
 
   //métodos especiales
   this.agregarCuerpoCeleste = function (unCCel) {
+    //console.log('el cc recivido se llama: '+unCCel.getNombre());
     if (unCCel instanceof CuerpoCeleste) {
       arrCuerposCel.push(unCCel);//recibe un objeto
     } else {
@@ -175,11 +176,12 @@ var ProgramaEspacial = function (_nomb, _fIni, _fFin, _alca) {
   };
 
   //métodos especiales
-  this.agregarMisiones = function (unaMision) {
-    if (unaMision instanceof Mision) {
-      arrMisiones.push(unaMision);//recibe un objeto
+  this.agregarMision = function (unaMis) {
+    //console.log('la misión recivida se llama: '+unaMis.getNombre());
+    if (unaMis instanceof Mision) {
+      arrMisiones.push(unaMis);//recibe un objeto
     } else {
-      console.warn('agregarMisiones: el objeto recibido no es de tipo Mision.');
+      console.warn('agregarMision: el objeto recibido no es de tipo Mision.');
     }
   };
 };
