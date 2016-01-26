@@ -284,6 +284,54 @@ $(document).ready(function(){
 			console.log(">>Misión creada");
 		}
 	});
-	
+	//=======================================================================================
+	//agregar misiones a programas espaciales
+	$('#add-Mision').on('click', function () {
+		var pespacial = $('#inp-pro-mis').val(),
+			mision = $('#inp-mis-pro').val();
+		//recorre los programas
+		for (i = 0; i < PEspaciales.length; i++){
+			if(PEspaciales[i].getNombre()===pespacial){
+				i=PEspaciales.length;//termina el ciclo
+				//recorre las misiones
+				for (j = 0; j < Misiones.length; j++){
+					if(Misiones[j].getNombre()===mision){
+						PEspaciales[i].agregarMisiones(Misiones[j]);
+						j=Misiones.length;//termina el ciclo
+					}
+				}
+			}
+		}
+	});
+	//agregar cuerpos celestes a misiones
+	$('#add-CCeleste').on('click', function () {
+		var mision = $('#inp-mis-cce').val(),
+			cceleste = $('#inp-cce-mis').val();
+		//recorre las misiones
+		for (m = 0; m < Misiones.length; m++){
+			if(Misiones[m].getNombre()===mision){
+				//recorre las estrellas
+				for (e = 0; e < Estrellas.length; e++){
+					if(Estrellas[e].getNombre()===cceleste){
+						Misiones[m].agregarCuerpoCeleste(Estrellas[e]);
+						e=Estrellas.length;
+					}
+				}
+				for (p = 0; p < Planetas.length; p++){
+					if(Planetas[p].getNombre()===cceleste){
+						Misiones[m].agregarCuerpoCeleste(Planetas[p]);
+						p=Planetas.length;
+					}
+				}
+				for (s = 0; s < Satelites.length; s++){
+					if(Satelites[s].getNombre()===cceleste){
+						Misiones[m].agregarCuerpoCeleste(Satelites[s]);
+						s=Satelites.length;
+					}
+				}
+				m=Misiones.length;//termina el ciclo
+			}
+		}
+	});
 	console.log('>>inserts out');
 });

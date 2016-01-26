@@ -177,7 +177,7 @@ var ProgramaEspacial = function (_nomb, _fIni, _fFin, _alca) {
   //métodos especiales
   this.agregarMisiones = function (unaMision) {
     if (unaMision instanceof Mision) {
-      arrCuerposCel.push(unaMision);//recibe un objeto
+      arrMisiones.push(unaMision);//recibe un objeto
     } else {
       console.warn('agregarMisiones: el objeto recibido no es de tipo Mision.');
     }
