@@ -33,6 +33,10 @@
         <button class="btn btn-default btn-tipo" id='btn-estrella' type="button">Estrella</button>
         <button class="btn btn-default btn-tipo" id='btn-PLaneta' type="button">Planeta</button>
         <button class="btn btn-default btn-tipo" id='btn-satelite' type="button">Sat&eacute;lite</button>
+        <div class="alert alert-info">
+          <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
+          <strong>Info!</strong> No se pueden registrar satélites, debe registrar primero un planeta.
+        </div>
       </div>
       
       <section class="form-estrella" id="form-estrella">
@@ -133,9 +137,8 @@
               </div>
               <div class="form-group">
                 <label for="form-satelite" class="label-text">Planeta al que pertenece</label>
-                <!--<select class="form-control" id="listid"></select>-->
-                <input type='text' class="form-control" list='listid' id="inp-sate-pert">
-                 <datalist id='listid'>
+                <input type='text' class="form-control" list='listid_pla' id="inp-sate-pert">
+                 <datalist id='listid_pla'>
                    <option label='J&uacute;piter' value='J&uacute;piter'>
                    <option label='Marte' value='Marte'>
                 </datalist>
@@ -249,21 +252,25 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="form-misiones" class="label-text">Programa Espacial</label>
-                <select class="form-control" id="tal"></select>
+                <input type='text' class="form-control" list='listid_pro' id="inp-sate-pert">
+                <datalist id='listid_pro'></datalist>
+                <!-- <select class="form-control" id="tal"></select>
                   <datalist id='listid'>
                     <option label='J&uacute;piter' value='J&uacute;piter'>
                     <option label='Marte' value='Marte'>
-                  </datalist> 
+                  </datalist>  -->
               </div>
             </div>   
             <div class="col-md-6">
               <div class="form-group">
                 <label for="form-misiones" class="label-text">Misión</label>
-                <select class="form-control" id="tal"></select>
+                <input type='text' class="form-control" list='listid_mis1' id="inp-sate-pert">
+                <datalist id='listid_mis1'></datalist>
+                <!-- <select class="form-control" id="tal"></select>
                  <datalist id='listid'>
                    <option label='J&uacute;piter' value='J&uacute;piter'>
                    <option label='Marte' value='Marte'>
-                </datalist> 
+                </datalist>  -->
               </div>
               <input class="btn btn-default pull-right btn-registrar btn-margin" type="button" value="Asignar Mision">
             </div>  
@@ -278,21 +285,25 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="form-cuerpos" class="label-text">Mision</label>
-                <select class="form-control" id="tal"></select>
+                <input type='text' class="form-control" list='listid_mis2' id="inp-sate-pert">
+                <datalist id='listid_mis2'></datalist>
+                <!-- <select class="form-control" id="tal"></select>
                   <datalist id='listid'>
                     <option label='J&uacute;piter' value='J&uacute;piter'>
                     <option label='Marte' value='Marte'>
-                  </datalist> 
+                  </datalist>  -->
               </div>
             </div>   
             <div class="col-md-6">
               <div class="form-group">
                 <label for="form-misiones" class="label-text">Cuerpo Celeste</label>
-                <select class="form-control" id="tal"></select>
+                <input type='text' class="form-control" list='listid_ccel' id="inp-sate-pert">
+                <datalist id='listid_ccel'></datalist>
+                <!-- <select class="form-control" id="tal"></select>
                  <datalist id='listid'>
                    <option label='J&uacute;piter' value='J&uacute;piter'>
                    <option label='Marte' value='Marte'>
-                </datalist> 
+                </datalist>  -->
               </div>
               <input class="btn btn-default pull-right btn-registrar btn-margin" type="button" value="Asignar
               Cuerpo">
@@ -409,31 +420,28 @@
               <td>eje2</td>
               <td>eje2</td>
             </tr>
-            <tr>
-              <td>eje3</td>
-              <td>eje3</td>
-              <td>eje3</td>
-              <td>eje3</td>
-              <td>eje3</td>
-            </tr>
           </tbody>
         </table>
         <div class='btn-listas btn-lista3'>
+          <button class="btn btn-default btn-tipo btn-tipo2" id='btn-programasMisiones' type="button">Prog. por misi&oacute;n</button>
+          <button class="btn btn-default btn-tipo btn-tipo2" id='btn-misionesCeleste' type="button">Mis. por c.celeste</button>
+        </div>
+        <!-- <div class='btn-listas btn-lista3'>
           <button class="btn btn-default btn-tipo btn-tipo2" id='btn-programasMisiones' type="button">Programas por misi&oacute;n</button>
           <button class="btn btn-default btn-tipo btn-tipo2" id='btn-misionesCeleste' type="button">Misiones por cuerpo celeste</button>
-        </div>
+        </div> -->
         
 
 <div id="table-mision">
 <form class="form-inline">
   <div class="form-group">
-    <select class="form-control">
+    <!-- <select class="form-control">
   <option>1</option>
   <option>2</option>
   <option>3</option>
   <option>4</option>
   <option>5</option>
-</select>
+</select> -->
   
   </div>
   <button type="submit" class="btn btn-default pull-right" id="consulta-programa-mision">Registar</button>
@@ -455,13 +463,13 @@
 <div id="table-mision-cuerpo">
 <form class="form-inline">
   <div class="form-group">
-    <select class="form-control">
+    <!-- <select class="form-control">
   <option>1</option>
   <option>2</option>
   <option>3</option>
   <option>4</option>
   <option>5</option>
-</select>
+</select> -->
   
   </div>
   <button type="submit" class="btn btn-default pull-right" id="consulta-mision-cuerpo">Registar</button>
@@ -486,6 +494,7 @@
     </footer>
     <script type="text/javascript" src='js/form.js'></script>
     <script type="text/javascript" src='js/jquery-2.2.0.min.js'></script>
+    <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> --> <!-- para alerts de bootstrap -->
     <script type="text/javascript" src='js/clasesUniverso.js'></script>
     <script type="text/javascript" src='js/inserts.js'></script>
     <script type="text/javascript" src='js/tablas.js'></script>

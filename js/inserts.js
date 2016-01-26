@@ -11,7 +11,7 @@ var hideAllcc = function () {
 };
 
 /*var cagarSelectPlanetas = function () {
-	var sPlanetas = $('#listid');//carga lista de planetas
+	var sPlanetas = $('#listid_pla');//carga lista de planetas
 	var tam = sPlanetas.options.length;
 	for (i = 0; i < tam; i++){
 		sPlanetas.remove(i);
@@ -24,7 +24,7 @@ var hideAllcc = function () {
 };*/
 //añade options a la lista desplegable de planetas
 var cagarSelectPlanetas = function () {
-	var sPlanetas = $('#listid');//carga lista de planetas
+	var sPlanetas = $('#listid_pla');//carga lista de planetas
 	//remueve todas las opciones precargadas en la lista
 	sPlanetas.empty();
 	//invoca función que actualiza la lista
@@ -90,6 +90,7 @@ $(document).ready(function(){
 		$('#tbl-programas').hide();
 		$('#table-mision').hide();		
 		$('#table-mision-cuerpo').hide();
+		$('.alert').hide();
 	//--invocar función de validación de inputs--
 
 	//listener: botón "abrir" form de registro de estrellas
@@ -110,6 +111,7 @@ $(document).ready(function(){
 	$('#btn-PLaneta').on('click', function () {
 		hideAllcc();
 		$('#form-planeta').show('slow');
+		$('.alert').hide();
 		console.log('entró al fomulario para registro de planetas');
 	});
 
@@ -132,7 +134,8 @@ $(document).ready(function(){
 			cagarSelectPlanetas();
 			console.log(">>cargó la lista desplegable de planetas");
 		} else {
-			alert("No se pueden registrar satélites, debe registrar primero un planeta");
+			$('.alert').show();
+			//alert("No se pueden registrar satélites, debe registrar primero un planeta");
 		}
 	});
 	//listener: botón "abrir" tabla de satélites
@@ -230,9 +233,9 @@ $(document).ready(function(){
 			dimeSC = $('#inp-sate-dist').val(),
 			caPrin = $('#inp-sate-caract').val(),
 			planeta = $('#inp-sate-pert').val(),
-			//planeta = $('#listid option:selected').attr('value'),
-			//planeta = $('#listid option:selected').val(),
-			//planeta = $('#listid option:selected').text(),
+			//planeta = $('#listid_pla option:selected').attr('value'),
+			//planeta = $('#listid_pla option:selected').val(),
+			//planeta = $('#listid_pla option:selected').text(),
 			existe = false;//bandera de verificación de satélites
 		//2) verificar si existe el satélite
 		//3) insertar nuevo satélite
