@@ -1,6 +1,6 @@
 //declarar arreglos para almacenar los objetos
 var Estrellas = [],	Planetas = [],	Satelites = [],	PEspaciales = [],	Misiones = [];
-//esconde los formularios de inserción de los 3 cuerpos celestes
+//esconde las secciones de inserción y despliegue de información de los 3 c.celestes
 var hideAllcc = function () {
 	$('#form-estrella').hide();
 	$('#form-planeta').hide();
@@ -9,19 +9,7 @@ var hideAllcc = function () {
 	$('#tabla-planetas').hide();
 	$('#tabla-satelites').hide();
 };
-
-/*var cagarSelectPlanetas = function () {
-	var sPlanetas = $('#listid_pla');//carga lista de planetas
-	var tam = sPlanetas.options.length;
-	for (i = 0; i < tam; i++){
-		sPlanetas.remove(i);
-	}
-	//invoca funcion que actualiza el select de los cursos
-	Planetas.forEach(function(_unPlaneta, i) {
-		sPlanetas.options[i] = new Option(_unPlaneta.getNombre(), _unPlaneta.getNombre());//(value , contenido)
-		console.log(">>option agregada");
-	});
-};*/
+/*funciones para cargar las listas desplegables*/
 //añade options a la lista desplegable de planetas
 var cagarSelectPlanetas = function () {
 	var sPlanetas = $('#listid_pla');//carga lista de planetas
@@ -34,9 +22,9 @@ var cagarSelectPlanetas = function () {
 		console.log(">>opción agregada a select de planetas");
 	});
 };
-//añade options a la lista desplegable de PEspaciales
+//añade options a la lista desplegable de Porgrmas Espaciales
 var cagarSelectPEspaciales = function () {
-	var sPEspaciales = $('#???');//carga lista de PEspaciales
+	var sPEspaciales = $('#listid_pro');//carga lista de PEspaciales
 	//remueve todas las opciones precargadas en la lista
 	sPEspaciales.empty();
 	//invoca función que actualiza la lista
@@ -48,7 +36,7 @@ var cagarSelectPEspaciales = function () {
 };
 //añade options a la lista desplegable de Misiones
 var cagarSelectMisiones = function () {
-	var sMisiones = $('#???');//carga lista de Misiones
+	var sMisiones = $('#listid_mis1');//carga lista de Misiones
 	//remueve todas las opciones precargadas en la lista
 	sMisiones.empty();
 	//invoca función que actualiza la lista
@@ -60,7 +48,7 @@ var cagarSelectMisiones = function () {
 };
 //añade options a la lista desplegable de Misiones2
 var cagarSelectMisiones2 = function () {
-	var sMisiones = $('#???');//carga lista de Misiones
+	var sMisiones = $('#listid_mis2');//carga lista de Misiones
 	//remueve todas las opciones precargadas en la lista
 	sMisiones.empty();
 	//invoca función que actualiza la lista
@@ -70,19 +58,29 @@ var cagarSelectMisiones2 = function () {
 		console.log(">>opción agregada a select de Misiones");
 	});
 };
-//añade options a la lista desplegable de CCelestes(esta es diferente!!!)
+//añade options a la lista desplegable de Cuerpos Celestes
 var cagarSelectCCelestes = function () {
-	var sCCelestes = $('#???');//carga lista de CCelestes
+	var sCCelestes = $('#listid_ccel');//carga lista de CCelestes
 	//remueve todas las opciones precargadas en la lista
 	sCCelestes.empty();
 	//invoca función que actualiza la lista
+	Estrellas.forEach(function(_unaEstrella, i) {
+		var opt = $("<option></option>").attr("value", _unaEstrella.getNombre());
+		sCCelestes.append(opt);
+		console.log(">>opción agregada a select de c.celestes");
+	});
 	Planetas.forEach(function(_unPlaneta, i) {
 		var opt = $("<option></option>").attr("value", _unPlaneta.getNombre());
 		sCCelestes.append(opt);
-		console.log(">>opción agregada a select de planetas");
+		console.log(">>opción agregada a select de c.celestes");
+	});
+	Satelites.forEach(function(_unSatelite, i) {
+		var opt = $("<option></option>").attr("value", _unSatelite.getNombre());
+		sCCelestes.append(opt);
+		console.log(">>opción agregada a select de c.celestes");
 	});
 };
-//=======================================================================
+//=======================================================================================
 $(document).ready(function(){
 	console.log('>>inserts in!');
 	hideAllcc();
@@ -93,36 +91,33 @@ $(document).ready(function(){
 		$('.alert').hide();
 	//--invocar función de validación de inputs--
 
-	//listener: botón "abrir" form de registro de estrellas
+	/*listeners para desplegar las diferentes secciones*/
+	//listener: botón "abrir" registro de estrellas
 	$('#btn-estrella').on('click', function () {
 		hideAllcc();
 		$('#form-estrella').show('slow');
 		console.log('entró al fomulario para registro de estrellas');
 	});
-
 	//listener: botón "abrir" tabla de estrellas
 	$('#btn-listasEtrellas').on('click', function () {
 		hideAllcc();
 		$('#tabla-estrellas').show('slow');
 		console.log('entró a la tabla de estrellas');
 	});
-
-	//listener: botón "abrir" form de registro de planetas
+	//listener: botón "abrir" registro de planetas
 	$('#btn-PLaneta').on('click', function () {
 		hideAllcc();
 		$('#form-planeta').show('slow');
 		$('.alert').hide();
 		console.log('entró al fomulario para registro de planetas');
 	});
-
 	//listener: botón "abrir" tabla de planetas
 	$('#btn-listasPLaneta').on('click', function () {
 		hideAllcc();
 		$('#tabla-planetas').show('slow');
 		console.log('mostro la tabla de  planetas');
 	});
-
-	//listener: botón "abrir" form de registro de satélites
+	//listener: botón "abrir" registro de satélites
 	$('#btn-satelite').on('click', function () {
 		//Antes de abrir el form se valida que exista almenos un planeta
 		if(Planetas.length>0){//si existe almenos 1
@@ -145,21 +140,18 @@ $(document).ready(function(){
 		console.log('Mostro la tabla de Satelites');
 	});
 
-
 	//listener: botón "abrir" tabla de misiones
 	$('#btn-listaMisiones').on('click', function () {
 	    $('#tbl-programas').hide();
 		$('#tbl-misiones').show('slow');
 		console.log('mostro la tabla de  misiones');
 	});
-
 	//listener: botón "abrir" tabla de programas
 	$('#btn-listaProgramas').on('click', function () {
 		$('#tbl-misiones').hide();		
 		$('#tbl-programas').show('slow');
 		console.log('mostro la tabla de  misiones');
 	});
-
 	//listener: botón "abrir misiones por programa" 
 	$('#btn-programasMisiones').on('click', function () {
 		$('#table-mision-cuerpo').hide();		
@@ -172,17 +164,22 @@ $(document).ready(function(){
 		$('#table-mision-cuerpo').show('slow');
 		console.log('mostro la tabla de  misiones.cuerpo');
 	});
-
-
-
-
-
-
-
-
-
-
-
+	//=======================================================================================
+	/*listeners para listas desplegables*/
+	$('#inp-pro-mis').on("click", function() {
+		cagarSelectPEspaciales();
+	});
+	$('#inp-mis-pro').on("click", function() {
+		cagarSelectMisiones();
+	});
+	$('#inp-mis-cce').on("click", function() {
+		cagarSelectMisiones2();
+	});
+	$('#inp-cce-mis').on("click", function() {
+		cagarSelectCCelestes();
+	});
+	//=======================================================================================
+	/**listeners para botónes de insertar*/
 	//listener: botón insertar estrellas
 	$('#reg-estrella').on('click', function () {
 		//1) capturar inputs
@@ -203,7 +200,6 @@ $(document).ready(function(){
 			console.log(">>Estrella creada");
 		}
 	});
-
 	//listener: botón insertar planetas
 	$('#reg-PLaneta').on('click', function () {
 		//1) capturar inputs
@@ -222,7 +218,6 @@ $(document).ready(function(){
 			console.log(">>Planeta creado");
 		}
 	});
-
 	//listener: botón insertar satélites
 	$('#reg-satelite').on('click', function () {
 		//1) capturar inputs
@@ -233,9 +228,7 @@ $(document).ready(function(){
 			dimeSC = $('#inp-sate-dist').val(),
 			caPrin = $('#inp-sate-caract').val(),
 			planeta = $('#inp-sate-pert').val(),
-			//planeta = $('#listid_pla option:selected').attr('value'),
-			//planeta = $('#listid_pla option:selected').val(),
-			//planeta = $('#listid_pla option:selected').text(),
+			//planeta = $('#listid_pla option:selected').attr('value'),.val(),.text()???
 			existe = false;//bandera de verificación de satélites
 		//2) verificar si existe el satélite
 		//3) insertar nuevo satélite
@@ -246,24 +239,14 @@ $(document).ready(function(){
 			console.log(Planetas.length);
 
 			//4) agregar satélite al planeta
-			Planetas.forEach(function(_unPla, i) {
-				console.log("entroalforeach");
-		    	if(_unPla.getNombre() == planeta){
-					console.log("entró a el if");
-					_unPla.agregarSatelite(newSatelite);
+			for (i = 0; i < Planetas.length; i++){
+				if(Planetas[i].getNombre()===planeta){
+					Planetas[i].agregarSatelite(newSatelite);
+					i=Planetas.length;//termina el ciclo
 				}
-			});
-						//no está funcionando la inserción de satelite a planeta
-						/*for (i = 0; i >= Planetas.length; i++){
-							if(Planetas[i]===planeta){
-								console.log("En Planetas[] existe uno llamado"+ planeta );
-								Planetas[i].agregarSatelite(newSatelite);
-								i=Planetas.length;//termina el ciclo
-							}
-						}*/
+			}
 		}//fin3)
 	});
-
 	//listener del botón insertar p.espaciales
 	$('#reg-Programa').on('click', function () {
 		//1) capturar inputs
@@ -280,7 +263,6 @@ $(document).ready(function(){
 			console.log(">>Programa espacial creado");
 		}
 	});
-
 	//listener del botón insertar misiones
 	$('#reg-Mision').on('click', function () {
 		//1) capturar inputs
